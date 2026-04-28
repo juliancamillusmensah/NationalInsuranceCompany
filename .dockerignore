@@ -1,0 +1,40 @@
+# Build artifacts
+*.class
+WEB-INF/classes/
+build/
+target/
+dist/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Git
+.git/
+.gitignore
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Documentation (optional - remove if you want docs in container)
+README.md
+*.md
+
+# Docker files themselves (not needed in context)
+Dockerfile
+docker-compose.yml
+.dockerignore

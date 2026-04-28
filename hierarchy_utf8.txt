@@ -1,0 +1,570 @@
+﻿Folder PATH listing
+Volume serial number is F221-D2F5
+C:.
+|   account_settings.jsp
+|   add_company_process.jsp
+|   add_policy_process.jsp
+|   add_system_config.jsp
+|   admin_invite_action.jsp
+|   admin_invite_process.jsp
+|   admin_member_action.jsp
+|   allhomepage.jsp
+|   allloginpage.jsp
+|   auth_redirect.jsp
+|   cancel_policy_process.jsp
+|   claim_process.jsp
+|   clear_notifications_process.jsp
+|   Companyadmin.jsp
+|   companyadmin_activities.jsp
+|   companyadmin_claims.jsp
+|   companyadmin_export_claims.jsp
+|   companyadmin_filing.jsp
+|   companyadmin_notifications.jsp
+|   companyadmin_policies.jsp
+|   companyadmin_settings.jsp
+|   companyadmin_subscribers.jsp
+|   companyadmin_transactions.jsp
+|   companyadmin_verify_kyc_process.jsp
+|   compile.ps1
+|   Customerportal.jsp
+|   customer_enrollment_wizard.jsp
+|   customer_explore_policies.jsp
+|   customer_new_claim.jsp
+|   customer_policy_details.jsp
+|   customer_profile.jsp
+|   customer_support.jsp
+|   delete_system_config.jsp
+|   edit_company_process.jsp
+|   export_claims.jsp
+|   export_companies.jsp
+|   export_transactions.jsp
+|   generate_market_report.jsp
+|   global_search.jsp
+|   hierarchy.txt
+|   Insurance-Act-2021-GH.pdf
+|   license_renewal_checkout.jsp
+|   logout.jsp
+|   maintenance.jsp
+|   mark_notification_read.jsp
+|   nic_about_commission.jsp
+|   nic_acts_regulations.jsp
+|   nic_contact.jsp
+|   nic_entities.jsp
+|   nic_ghana_hero_1776075271111.png
+|   nic_industry_data.jsp
+|   nic_licensing.jsp
+|   nic_motor_verify.jsp
+|   nic_protection.jsp
+|   populate_sample_financials.jsp
+|   profile_update_process.jsp
+|   publication_process.jsp
+|   public_publications.jsp
+|   registercustomer.jsp
+|   register_admin.jsp
+|   renew_license_process.jsp
+|   search_results.jsp
+|   setup_claims_db.jsp
+|   stakeholder_insurers_1776075295179.png
+|   stakeholder_intermediaries_1776075317576.png
+|   stakeholder_policyholders_1776075336756.png
+|   submit_filing_process.jsp
+|   Superadmin.jsp
+|   superadmin_companies.jsp
+|   superadmin_invite_process.jsp
+|   superadmin_kyc.jsp
+|   superadmin_policies.jsp
+|   superadmin_publications.jsp
+|   superadmin_reports.jsp
+|   support_process.jsp
+|   Systemcreator.jsp
+|   system_audit.jsp
+|   system_logs.jsp
+|   system_roles.jsp
+|   system_status.jsp
+|   test_db.jsp
+|   test_db_list.jsp
+|   update_bank_details_process.jsp
+|   update_claim_status_process.jsp
+|   update_role_permission.jsp
+|   update_settings_process.jsp
+|   update_system_config.jsp
+|   
++---common
+|       footer.jsp
+|       header.jsp
+|       public_footer.jsp
+|       public_header.jsp
+|       sidebar.jsp
+|       
++---scratch
+|       CheckDatabase.class
+|       CheckDatabase.java
+|       CreateFinancialsTable.class
+|       CreateFinancialsTable.java
+|       DebugFinancials.class
+|       DebugFinancials.java
+|       PopulateFinancials.class
+|       PopulateFinancials.java
+|       SchemaCheck.class
+|       SchemaCheck.java
+|       TestTallying.class
+|       TestTallying.java
+|       
++---src
+|   \---com
+|       \---insurance
+|           +---dao
+|           |       AccountDAO.java
+|           |       ClaimDAO.java
+|           |       CompanyDAO.java
+|           |       ContactDAO.java
+|           |       FinancialDAO.java
+|           |       NotificationDAO.java
+|           |       PolicyDAO.java
+|           |       PublicationDAO.java
+|           |       SearchDAO.java
+|           |       SystemDAO.java
+|           |       TransactionDAO.java
+|           |       
+|           +---filter
+|           |       MaintenanceFilter.java
+|           |       
+|           +---model
+|           |       Account.java
+|           |       AccountPhone.java
+|           |       AdminInvitation.java
+|           |       Claim.java
+|           |       Company.java
+|           |       CompanySettings.java
+|           |       DashboardActivity.java
+|           |       Enquiry.java
+|           |       GhanaRegistryEntry.java
+|           |       MarketFinancials.java
+|           |       Notification.java
+|           |       Permission.java
+|           |       Policy.java
+|           |       Publication.java
+|           |       Role.java
+|           |       SystemLog.java
+|           |       SystemSetting.java
+|           |       TeamMember.java
+|           |       Transaction.java
+|           |       
+|           +---servlet
+|           |       AdminRegisterServlet.java
+|           |       DocumentDownloadServlet.java
+|           |       EnrollmentServlet.java
+|           |       ImageServlet.java
+|           |       LoginServlet.java
+|           |       PublicationUploadServlet.java
+|           |       RegisterServlet.java
+|           |       RegisterServlet2.java
+|           |       SignOutServlet.java
+|           |       SubmitClaimServlet.java
+|           |       SubmitKYCServlet.java
+|           |       
+|           \---util
+|                   AccountDebugger.java
+|                   AppContextListener.java
+|                   ComplianceManager.java
+|                   DataPicker.java
+|                   DBConnection.class
+|                   DBConnection.java
+|                   DumpSchema.class
+|                   DumpSchema.java
+|                   DumpSchemaPhase2.class
+|                   DumpSchemaPhase2.java
+|                   GhanaRegistryMigration.java
+|                   IDMigration.class
+|                   IDMigration.java
+|                   IDMigrationPhase2.class
+|                   IDMigrationPhase2.java
+|                   IDMigrationPhase3.java
+|                   MigratePolicyImage.java
+|                   NICAlignmentMigration.java
+|                   PolicyPrivacyMigration.java
+|                   RegisterTest.java
+|                   RoleIDLister.java
+|                   RoleLister.java
+|                   RoleSchemaUpdater.java
+|                   SchemaCheck.java
+|                   SchemaChecker.java
+|                   SchemaUpdater.java
+|                   SettingsInitializer.java
+|                   TableLister.java
+|                   TestCleaner.java
+|                   
++---static
+|   +---docs
+|   |       Application_Pack.pdf
+|   |       Claims_Form.pdf
+|   |       
+|   \---images
+|       |   admin_preview.png
+|       |   customer_preview.png
+|       |   hero.png
+|       |   
+|       \---board
+|               board_abiba.png
+|               board_christopher.png
+|               board_david.png
+|               board_emmanuel.png
+|               
++---tmp
+|       AlterDB.class
+|       AlterDB.java
+|       AlterEnrollmentDB.class
+|       AlterEnrollmentDB.java
+|       CheckSchema.class
+|       CheckSchema.java
+|       FixNullPolicies.class
+|       FixNullPolicies.java
+|       MigrateClaims.class
+|       MigrateClaims.java
+|       
++---tmp_excel
+|   |   [Content_Types].xml
+|   |   
+|   +---docProps
+|   |       app.xml
+|   |       core.xml
+|   |       
+|   +---xl
+|   |   |   calcChain.xml
+|   |   |   comments1.xml
+|   |   |   comments10.xml
+|   |   |   comments11.xml
+|   |   |   comments12.xml
+|   |   |   comments13.xml
+|   |   |   comments14.xml
+|   |   |   comments15.xml
+|   |   |   comments16.xml
+|   |   |   comments17.xml
+|   |   |   comments18.xml
+|   |   |   comments19.xml
+|   |   |   comments2.xml
+|   |   |   comments20.xml
+|   |   |   comments21.xml
+|   |   |   comments22.xml
+|   |   |   comments23.xml
+|   |   |   comments24.xml
+|   |   |   comments25.xml
+|   |   |   comments3.xml
+|   |   |   comments4.xml
+|   |   |   comments5.xml
+|   |   |   comments6.xml
+|   |   |   comments7.xml
+|   |   |   comments8.xml
+|   |   |   comments9.xml
+|   |   |   customProperty1.bin
+|   |   |   customProperty10.bin
+|   |   |   customProperty11.bin
+|   |   |   customProperty12.bin
+|   |   |   customProperty13.bin
+|   |   |   customProperty14.bin
+|   |   |   customProperty15.bin
+|   |   |   customProperty16.bin
+|   |   |   customProperty17.bin
+|   |   |   customProperty18.bin
+|   |   |   customProperty19.bin
+|   |   |   customProperty2.bin
+|   |   |   customProperty20.bin
+|   |   |   customProperty21.bin
+|   |   |   customProperty22.bin
+|   |   |   customProperty23.bin
+|   |   |   customProperty24.bin
+|   |   |   customProperty25.bin
+|   |   |   customProperty3.bin
+|   |   |   customProperty4.bin
+|   |   |   customProperty5.bin
+|   |   |   customProperty6.bin
+|   |   |   customProperty7.bin
+|   |   |   customProperty8.bin
+|   |   |   customProperty9.bin
+|   |   |   sharedStrings.xml
+|   |   |   styles.xml
+|   |   |   workbook.xml
+|   |   |   
+|   |   +---drawings
+|   |   |   |   drawing1.xml
+|   |   |   |   drawing2.xml
+|   |   |   |   drawing3.xml
+|   |   |   |   drawing4.xml
+|   |   |   |   drawing5.xml
+|   |   |   |   vmlDrawing1.vml
+|   |   |   |   vmlDrawing10.vml
+|   |   |   |   vmlDrawing11.vml
+|   |   |   |   vmlDrawing12.vml
+|   |   |   |   vmlDrawing13.vml
+|   |   |   |   vmlDrawing14.vml
+|   |   |   |   vmlDrawing15.vml
+|   |   |   |   vmlDrawing16.vml
+|   |   |   |   vmlDrawing17.vml
+|   |   |   |   vmlDrawing18.vml
+|   |   |   |   vmlDrawing19.vml
+|   |   |   |   vmlDrawing2.vml
+|   |   |   |   vmlDrawing20.vml
+|   |   |   |   vmlDrawing21.vml
+|   |   |   |   vmlDrawing22.vml
+|   |   |   |   vmlDrawing23.vml
+|   |   |   |   vmlDrawing24.vml
+|   |   |   |   vmlDrawing25.vml
+|   |   |   |   vmlDrawing3.vml
+|   |   |   |   vmlDrawing4.vml
+|   |   |   |   vmlDrawing5.vml
+|   |   |   |   vmlDrawing6.vml
+|   |   |   |   vmlDrawing7.vml
+|   |   |   |   vmlDrawing8.vml
+|   |   |   |   vmlDrawing9.vml
+|   |   |   |   
+|   |   |   \---_rels
+|   |   |           drawing1.xml.rels
+|   |   |           drawing2.xml.rels
+|   |   |           drawing3.xml.rels
+|   |   |           drawing4.xml.rels
+|   |   |           drawing5.xml.rels
+|   |   |           
+|   |   +---media
+|   |   |       image1.png
+|   |   |       image2.png
+|   |   |       image3.png
+|   |   |       image4.png
+|   |   |       image5.png
+|   |   |       
+|   |   +---printerSettings
+|   |   |       printerSettings1.bin
+|   |   |       printerSettings10.bin
+|   |   |       printerSettings11.bin
+|   |   |       printerSettings12.bin
+|   |   |       printerSettings13.bin
+|   |   |       printerSettings14.bin
+|   |   |       printerSettings15.bin
+|   |   |       printerSettings16.bin
+|   |   |       printerSettings17.bin
+|   |   |       printerSettings2.bin
+|   |   |       printerSettings3.bin
+|   |   |       printerSettings4.bin
+|   |   |       printerSettings5.bin
+|   |   |       printerSettings6.bin
+|   |   |       printerSettings7.bin
+|   |   |       printerSettings8.bin
+|   |   |       printerSettings9.bin
+|   |   |       
+|   |   +---theme
+|   |   |       theme1.xml
+|   |   |       
+|   |   +---worksheets
+|   |   |   |   sheet1.xml
+|   |   |   |   sheet10.xml
+|   |   |   |   sheet11.xml
+|   |   |   |   sheet12.xml
+|   |   |   |   sheet13.xml
+|   |   |   |   sheet14.xml
+|   |   |   |   sheet15.xml
+|   |   |   |   sheet16.xml
+|   |   |   |   sheet17.xml
+|   |   |   |   sheet18.xml
+|   |   |   |   sheet19.xml
+|   |   |   |   sheet2.xml
+|   |   |   |   sheet20.xml
+|   |   |   |   sheet21.xml
+|   |   |   |   sheet22.xml
+|   |   |   |   sheet23.xml
+|   |   |   |   sheet24.xml
+|   |   |   |   sheet25.xml
+|   |   |   |   sheet26.xml
+|   |   |   |   sheet27.xml
+|   |   |   |   sheet28.xml
+|   |   |   |   sheet29.xml
+|   |   |   |   sheet3.xml
+|   |   |   |   sheet30.xml
+|   |   |   |   sheet31.xml
+|   |   |   |   sheet32.xml
+|   |   |   |   sheet33.xml
+|   |   |   |   sheet34.xml
+|   |   |   |   sheet35.xml
+|   |   |   |   sheet36.xml
+|   |   |   |   sheet37.xml
+|   |   |   |   sheet38.xml
+|   |   |   |   sheet39.xml
+|   |   |   |   sheet4.xml
+|   |   |   |   sheet40.xml
+|   |   |   |   sheet41.xml
+|   |   |   |   sheet42.xml
+|   |   |   |   sheet43.xml
+|   |   |   |   sheet44.xml
+|   |   |   |   sheet45.xml
+|   |   |   |   sheet46.xml
+|   |   |   |   sheet47.xml
+|   |   |   |   sheet48.xml
+|   |   |   |   sheet49.xml
+|   |   |   |   sheet5.xml
+|   |   |   |   sheet50.xml
+|   |   |   |   sheet51.xml
+|   |   |   |   sheet52.xml
+|   |   |   |   sheet53.xml
+|   |   |   |   sheet54.xml
+|   |   |   |   sheet55.xml
+|   |   |   |   sheet6.xml
+|   |   |   |   sheet7.xml
+|   |   |   |   sheet8.xml
+|   |   |   |   sheet9.xml
+|   |   |   |   
+|   |   |   \---_rels
+|   |   |           sheet1.xml.rels
+|   |   |           sheet2.xml.rels
+|   |   |           sheet20.xml.rels
+|   |   |           sheet21.xml.rels
+|   |   |           sheet22.xml.rels
+|   |   |           sheet24.xml.rels
+|   |   |           sheet26.xml.rels
+|   |   |           sheet28.xml.rels
+|   |   |           sheet3.xml.rels
+|   |   |           sheet30.xml.rels
+|   |   |           sheet31.xml.rels
+|   |   |           sheet32.xml.rels
+|   |   |           sheet33.xml.rels
+|   |   |           sheet34.xml.rels
+|   |   |           sheet35.xml.rels
+|   |   |           sheet36.xml.rels
+|   |   |           sheet37.xml.rels
+|   |   |           sheet38.xml.rels
+|   |   |           sheet39.xml.rels
+|   |   |           sheet40.xml.rels
+|   |   |           sheet41.xml.rels
+|   |   |           sheet42.xml.rels
+|   |   |           sheet43.xml.rels
+|   |   |           sheet44.xml.rels
+|   |   |           sheet45.xml.rels
+|   |   |           sheet46.xml.rels
+|   |   |           sheet47.xml.rels
+|   |   |           sheet48.xml.rels
+|   |   |           sheet49.xml.rels
+|   |   |           sheet50.xml.rels
+|   |   |           sheet51.xml.rels
+|   |   |           sheet52.xml.rels
+|   |   |           sheet53.xml.rels
+|   |   |           sheet54.xml.rels
+|   |   |           sheet55.xml.rels
+|   |   |           sheet7.xml.rels
+|   |   |           
+|   |   \---_rels
+|   |           workbook.xml.rels
+|   |           
+|   \---_rels
+|           .rels
+|           
++---uploads
+|   +---enrollments
+|   |       953fc109-ae50-4ee5-91ea-b0ca79553fc4_1775487796148_GROUP_12_PRESENTATION_2.pdf
+|   |       
+|   \---publications
+|           1775487628456_Michael_Atta_Professional_CV.docx
+|           1775487796148_GROUP_12_PRESENTATION.pdf
+|           1775487933080_ASSIGNMENT.drawio.pdf
+|           1775488007193_scanned.pdf
+|           MARKET-REPORT_2025-QUARTER-4-BROKERS.xlsx
+|           MARKET-REPORT_2025-QUARTER-4_NON-LIFE.xlsx
+|           MARKET-REPORT_QUARTER-4_LIFE.xlsx
+|           
+\---WEB-INF
+    |   web.xml
+    |   
+    +---classes
+    |   \---com
+    |       \---insurance
+    |           +---dao
+    |           |       AccountDAO.class
+    |           |       ClaimDAO.class
+    |           |       CompanyDAO.class
+    |           |       ContactDAO.class
+    |           |       FinancialDAO.class
+    |           |       NotificationDAO.class
+    |           |       PolicyDAO.class
+    |           |       PublicationDAO.class
+    |           |       SearchDAO.class
+    |           |       SystemDAO.class
+    |           |       TransactionDAO.class
+    |           |       
+    |           +---filter
+    |           |       MaintenanceFilter.class
+    |           |       
+    |           +---model
+    |           |       Account.class
+    |           |       AccountPhone.class
+    |           |       AdminInvitation.class
+    |           |       Claim.class
+    |           |       Company.class
+    |           |       CompanySettings.class
+    |           |       DashboardActivity.class
+    |           |       Enquiry.class
+    |           |       GhanaRegistryEntry.class
+    |           |       MarketFinancials.class
+    |           |       Notification.class
+    |           |       Permission.class
+    |           |       Policy.class
+    |           |       Publication.class
+    |           |       Role.class
+    |           |       SystemLog.class
+    |           |       SystemSetting.class
+    |           |       TeamMember.class
+    |           |       Transaction.class
+    |           |       
+    |           +---servlet
+    |           |       AdminRegisterServlet.class
+    |           |       DocumentDownloadServlet.class
+    |           |       EnrollmentServlet.class
+    |           |       ImageServlet.class
+    |           |       LoginServlet.class
+    |           |       PublicationUploadServlet.class
+    |           |       RegisterServlet.class
+    |           |       RegisterServlet2.class
+    |           |       SignOutServlet.class
+    |           |       SubmitClaimServlet.class
+    |           |       SubmitKYCServlet.class
+    |           |       
+    |           \---util
+    |                   AccountDebugger.class
+    |                   AppContextListener.class
+    |                   CheckAccount.class
+    |                   CheckSchema.class
+    |                   ComplianceManager.class
+    |                   CreateFreshInvite.class
+    |                   DataPicker.class
+    |                   DBConnection.class
+    |                   DumpSchema.class
+    |                   DumpSchemaPhase2.class
+    |                   FindAdmin.class
+    |                   GhanaRegistryMigration.class
+    |                   IDMigration.class
+    |                   IDMigrationPhase2.class
+    |                   IDMigrationPhase3.class
+    |                   InsertTest.class
+    |                   InviteViewer.class
+    |                   MigratePolicyImage.class
+    |                   MigratePolicyType.class
+    |                   NICAlignmentMigration.class
+    |                   PolicyPrivacyMigration.class
+    |                   RegisterTest.class
+    |                   RoleIDLister.class
+    |                   RoleLister.class
+    |                   RoleSchemaUpdater.class
+    |                   SchemaCheck.class
+    |                   SchemaChecker.class
+    |                   SchemaUpdater.class
+    |                   SettingsInitializer.class
+    |                   TableLister.class
+    |                   TestAuth.class
+    |                   TestCleaner.class
+    |                   VerifyPolicyDAO.class
+    |                   
+    +---database
+    |       NIC_insurance.db
+    |       NIC_insurance.db.bak
+    |       
+    \---lib
+            slf4j-api-2.0.9.jar
+            slf4j-simple-2.0.9.jar
+            sqlite-jdbc-3.45.1.0.jar
+            
+
