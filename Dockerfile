@@ -60,7 +60,8 @@ COPY --from=builder /app/web/*.jsp /usr/local/tomcat/webapps/ROOT/
 COPY --from=builder /app/web/common /usr/local/tomcat/webapps/ROOT/common/
 COPY --from=builder /app/web/data /usr/local/tomcat/webapps/ROOT/data/
 COPY --from=builder /app/web/uploads /usr/local/tomcat/webapps/ROOT/uploads/
-COPY --from=builder /app/web/WEB-INF/lib/*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
+COPY --from=builder /app/WEB-INF/lib/*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
+RUN rm -f /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/jakarta.servlet-api-*.jar
 
 # Ensure directories exist and set permissions
 RUN mkdir -p /usr/local/tomcat/webapps/ROOT/common \
