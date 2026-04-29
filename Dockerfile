@@ -39,11 +39,13 @@ RUN mkdir -p /app/WEB-INF/classes && \
     javac -cp "/app/WEB-INF/lib/*" -d /app/WEB-INF/classes \
     $(find /app/src -name "*.java")
 
-# Copy all web files to builder stage
-COPY . /app/web/
+# Copy web files to builder stage (exclude WEB-INF to avoid overwriting compiled classes)
+COPY *.jsp /app/web/
+COPY common /app/web/common/
+COPY web.xml /app/web/WEB-INF/
 
 # Ensure directories exist in builder
-RUN mkdir -p /app/web/common /app/web/data /app/web/uploads
+RUN mkdir -p /app/web/data /app/web/uploads
 
 # Stage 2: Runtime with Tomcat
 FROM tomcat:10.1-jdk17-temurin
@@ -51,16 +53,16 @@ FROM tomcat:10.1-jdk17-temurin
 # Remove default Tomcat apps
 RUN rm -rf /usr/local/tomcat/webapps/*
 
-# Copy compiled application
+# Copy compiled application (WEB-INF includes classes, lib, and web.xml)
 COPY --from=builder /app/WEB-INF /usr/local/tomcat/webapps/ROOT/WEB-INF
-COPY --from=builder /app/src /usr/local/tomcat/webapps/ROOT/src
 
-# Copy all web content from builder
+# Copy web content
 COPY --from=builder /app/web/*.jsp /usr/local/tomcat/webapps/ROOT/
 COPY --from=builder /app/web/common /usr/local/tomcat/webapps/ROOT/common/
 COPY --from=builder /app/web/data /usr/local/tomcat/webapps/ROOT/data/
 COPY --from=builder /app/web/uploads /usr/local/tomcat/webapps/ROOT/uploads/
-COPY --from=builder /app/WEB-INF/lib/*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
+
+# Remove servlet-api from runtime (Tomcat provides it)
 RUN rm -f /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/jakarta.servlet-api-*.jar
 
 # Ensure directories exist and set permissions
