@@ -42,6 +42,9 @@ RUN mkdir -p /app/WEB-INF/classes && \
 # Copy all web files to builder stage
 COPY . /app/web/
 
+# Ensure directories exist in builder
+RUN mkdir -p /app/web/common /app/web/data /app/web/uploads
+
 # Stage 2: Runtime with Tomcat
 FROM tomcat:10.1-jdk17-temurin
 
@@ -59,7 +62,7 @@ COPY --from=builder /app/web/data /usr/local/tomcat/webapps/ROOT/data/
 COPY --from=builder /app/web/uploads /usr/local/tomcat/webapps/ROOT/uploads/
 COPY --from=builder /app/web/WEB-INF/lib/*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
 
-# Copy static files if they exist (using RUN to handle missing files gracefully)
+# Ensure directories exist and set permissions
 RUN mkdir -p /usr/local/tomcat/webapps/ROOT/common \
     /usr/local/tomcat/webapps/ROOT/data \
     /usr/local/tomcat/webapps/ROOT/uploads
