@@ -30,6 +30,10 @@ RUN curl -L -o /app/WEB-INF/lib/jakarta.mail-2.0.1.jar \
     curl -L -o /app/WEB-INF/lib/jakarta.activation-2.0.1.jar \
     https://repo1.maven.org/maven2/com/sun/activation/jakarta.activation/2.0.1/jakarta.activation-2.0.1.jar
 
+# Download Jakarta Servlet API for compilation
+RUN curl -L -o /app/WEB-INF/lib/jakarta.servlet-api-6.0.0.jar \
+    https://repo1.maven.org/maven2/jakarta/servlet/jakarta.servlet-api/6.0.0/jakarta.servlet-api-6.0.0.jar
+
 # Compile Java sources
 RUN mkdir -p /app/WEB-INF/classes && \
     javac -cp "/app/WEB-INF/lib/*" -d /app/WEB-INF/classes \
