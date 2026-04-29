@@ -37,7 +37,11 @@ RUN curl -L -o /app/WEB-INF/lib/jakarta.servlet-api-6.0.0.jar \
 # Compile Java sources
 RUN mkdir -p /app/WEB-INF/classes && \
     javac -cp "/app/WEB-INF/lib/*" -d /app/WEB-INF/classes \
-    $(find /app/src -name "*.java")
+    $(find /app/src -name "*.java") && \
+    echo "=== Compiled classes ===" && \
+    find /app/WEB-INF/classes -name "*.class" | head -20 && \
+    echo "=== Total classes ===" && \
+    find /app/WEB-INF/classes -name "*.class" | wc -l
 
 # Copy web files to builder stage (exclude WEB-INF/classes and WEB-INF/lib to avoid overwriting compiled classes)
 COPY *.jsp /app/web/
@@ -63,7 +67,11 @@ COPY --from=builder /app/web/data /usr/local/tomcat/webapps/ROOT/data/
 COPY --from=builder /app/web/uploads /usr/local/tomcat/webapps/ROOT/uploads/
 
 # Remove servlet-api from runtime (Tomcat provides it)
-RUN rm -f /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/jakarta.servlet-api-*.jar
+RUN rm -f /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/jakarta.servlet-api-*.jar && \
+    echo "=== Runtime classes ===" && \
+    find /usr/local/tomcat/webapps/ROOT/WEB-INF/classes -name "*.class" | head -10 && \
+    echo "=== web.xml contents ===" && \
+    cat /usr/local/tomcat/webapps/ROOT/WEB-INF/web.xml | head -30
 
 # Ensure directories exist and set permissions
 RUN mkdir -p /usr/local/tomcat/webapps/ROOT/common \
