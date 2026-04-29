@@ -24,10 +24,19 @@ RUN if [ ! -f /app/WEB-INF/lib/slf4j-api-*.jar ]; then \
     https://repo1.maven.org/maven2/org/slf4j/slf4j-simple/2.0.9/slf4j-simple-2.0.9.jar; \
     fi
 
+# Download Jakarta Mail for SMTP support
+RUN curl -L -o /app/WEB-INF/lib/jakarta.mail-2.0.1.jar \
+    https://repo1.maven.org/maven2/com/sun/mail/jakarta.mail/2.0.1/jakarta.mail-2.0.1.jar && \
+    curl -L -o /app/WEB-INF/lib/jakarta.activation-2.0.1.jar \
+    https://repo1.maven.org/maven2/com/sun/activation/jakarta.activation/2.0.1/jakarta.activation-2.0.1.jar
+
 # Compile Java sources
 RUN mkdir -p /app/WEB-INF/classes && \
     javac -cp "/app/WEB-INF/lib/*" -d /app/WEB-INF/classes \
     $(find /app/src -name "*.java")
+
+# Copy all web files to builder stage
+COPY . /app/web/
 
 # Stage 2: Runtime with Tomcat
 FROM tomcat:10.1-jdk17-temurin
@@ -39,14 +48,17 @@ RUN rm -rf /usr/local/tomcat/webapps/*
 COPY --from=builder /app/WEB-INF /usr/local/tomcat/webapps/ROOT/WEB-INF
 COPY --from=builder /app/src /usr/local/tomcat/webapps/ROOT/src
 
-# Copy web content (JSPs, HTML, CSS, JS)
-COPY *.jsp /usr/local/tomcat/webapps/ROOT/
-COPY *.html /usr/local/tomcat/webapps/ROOT/ 2>/dev/null || true
-COPY *.css /usr/local/tomcat/webapps/ROOT/ 2>/dev/null || true
-COPY *.js /usr/local/tomcat/webapps/ROOT/ 2>/dev/null || true
-COPY common /usr/local/tomcat/webapps/ROOT/common/ 2>/dev/null || true
-COPY data /usr/local/tomcat/webapps/ROOT/data/ 2>/dev/null || true
-COPY uploads /usr/local/tomcat/webapps/ROOT/uploads/ 2>/dev/null || true
+# Copy all web content from builder
+COPY --from=builder /app/web/*.jsp /usr/local/tomcat/webapps/ROOT/
+COPY --from=builder /app/web/common /usr/local/tomcat/webapps/ROOT/common/
+COPY --from=builder /app/web/data /usr/local/tomcat/webapps/ROOT/data/
+COPY --from=builder /app/web/uploads /usr/local/tomcat/webapps/ROOT/uploads/
+COPY --from=builder /app/web/WEB-INF/lib/*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
+
+# Copy static files if they exist (using RUN to handle missing files gracefully)
+RUN mkdir -p /usr/local/tomcat/webapps/ROOT/common \
+    /usr/local/tomcat/webapps/ROOT/data \
+    /usr/local/tomcat/webapps/ROOT/uploads
 
 # Create data directory for SQLite persistence (for volume mounting)
 RUN mkdir -p /data && \
