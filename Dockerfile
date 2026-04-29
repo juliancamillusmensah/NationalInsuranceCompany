@@ -39,10 +39,10 @@ RUN mkdir -p /app/WEB-INF/classes && \
     javac -cp "/app/WEB-INF/lib/*" -d /app/WEB-INF/classes \
     $(find /app/src -name "*.java")
 
-# Copy web files to builder stage (exclude WEB-INF to avoid overwriting compiled classes)
+# Copy web files to builder stage (exclude WEB-INF/classes and WEB-INF/lib to avoid overwriting compiled classes)
 COPY *.jsp /app/web/
 COPY common /app/web/common/
-COPY web.xml /app/web/WEB-INF/
+COPY WEB-INF/web.xml /app/web/WEB-INF/
 
 # Ensure directories exist in builder
 RUN mkdir -p /app/web/data /app/web/uploads
