@@ -46,7 +46,7 @@ RUN mkdir -p /app/WEB-INF/classes && \
 # Copy web files to builder stage (exclude WEB-INF/classes and WEB-INF/lib to avoid overwriting compiled classes)
 COPY *.jsp /app/web/
 COPY common /app/web/common/
-COPY WEB-INF/web.xml /app/web/WEB-INF/
+COPY web.xml /app/web/WEB-INF/
 
 # Ensure directories exist in builder
 RUN mkdir -p /app/web/data /app/web/uploads
